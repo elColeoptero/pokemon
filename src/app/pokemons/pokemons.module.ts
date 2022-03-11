@@ -5,6 +5,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatListModule} from "@angular/material/list";
 import {PokemonDetailComponent} from './pokemon-detail/pokemon-detail.component';
 import {AppRoutingModule} from "../app-routing.module";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+import {MatChipsModule} from "@angular/material/chips";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 
 @NgModule({
@@ -16,7 +21,12 @@ import {AppRoutingModule} from "../app-routing.module";
     CommonModule,
     HttpClientModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule,
+    MatChipsModule,
+    InfiniteScrollModule
   ]
 })
 export class PokemonsModule {

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {PokemonService} from "../services/pokemon.service";
+import {Pokemon} from "../models/pokemon";
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -8,13 +10,21 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PokemonDetailComponent implements OnInit {
 
-  id ?: number;
+  pokemon ?: Pokemon;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) {
   }
 
   ngOnInit(): void {
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.pokemonService.getPokemonById(id).subscribe(pokemon => {
+      this.pokemon = pokemon
+    });
+  }
+
+  playAudio(): void {
+    const audio: HTMLAudioElement = <HTMLAudioElement>document.getElementById("pokemonAudio");
+    audio.play();
   }
 
 }

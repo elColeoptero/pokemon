@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PokemonsModule} from "./pokemons/pokemons.module";
 import {AppRoutingModule} from "./app-routing.module";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     BrowserAnimationsModule,
     PokemonsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

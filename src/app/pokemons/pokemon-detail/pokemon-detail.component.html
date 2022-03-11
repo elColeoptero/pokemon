@@ -1,2 +1,36 @@
-<p>pokemon-detail works!</p>
-<h2>{{id}}</h2>
+<div *ngIf="pokemon">
+  <button class="button_play" mat-fab routerLink="/pokemons">
+    <mat-icon class="white-icon">arrow_back</mat-icon>
+  </button>
+  <mat-grid-list class="grid-list-pokemon" cols="2" rowHeight="90px">
+    <mat-grid-tile [rowspan]="4">
+      <img alt="{{pokemon.name}}" class="img_pokemon" src="assets/img/official-artwork/{{pokemon.id}}.png">
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="5">
+      <div class="info_container">
+        <div class="field title">
+          <h1 class="title_pokemon">{{pokemon.name}}</h1>
+          <button (click)="playAudio()" class="button_play" mat-fab>
+            <mat-icon class="white-icon">play_circle_outline</mat-icon>
+          </button>
+        </div>
+        <mat-chip-list class="field">
+          <mat-chip *ngFor="let type of pokemon.types ">
+            {{type}}
+          </mat-chip>
+        </mat-chip-list>
+        <h2 class="field" style="margin-bottom: 0;"> Taille : {{pokemon.height | number: '.1'}} m</h2>
+        <h2 class="field"> Poids : {{pokemon.weight | number: '.1'}} kg</h2>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [rowspan]="1">
+      <p class="big_text">No. {{pokemon.id | number: '3.0-0'}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="5">
+      <p class="description medium_text">{{pokemon.description}}</p>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <audio autoplay id="pokemonAudio">
+    <source src="assets/audio/{{pokemon.id}}.mp3">
+  </audio>
+</div>

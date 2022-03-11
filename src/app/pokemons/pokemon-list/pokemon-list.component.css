@@ -1,0 +1,25 @@
+.pokemon_lbl {
+  margin: 0;
+}
+
+.pokemon_item {
+  background-color: #3d4548;
+  align-content: center;
+  height: 75px !important;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 20px) !important;
+  border-radius: 10px;
+}
+
+.pokemon_item:hover {
+  cursor: pointer;
+  background-color: #495356;
+}
+
+.icon_pokemon {
+  height: 100% !important;
+  margin-right: 10px;
+
+}

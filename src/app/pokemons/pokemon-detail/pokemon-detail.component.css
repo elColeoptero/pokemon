@@ -1,0 +1,49 @@
+.big_text {
+  font-size: 7em;
+}
+
+.medium_text {
+  font-size: 3em;
+  line-height: initial;
+}
+
+.img_pokemon {
+  height: 100%;
+}
+
+.title_pokemon {
+  margin-bottom: 0;
+  float: left;
+}
+
+.button_play {
+  background: none;
+  border: none;
+
+}
+
+.button_play:hover {
+  cursor: pointer;
+}
+
+.field {
+  width: 100%;
+}
+
+.info_container {
+  display: grid;
+
+}
+
+.title {
+  margin-bottom: 10%;
+}
+
+.white-icon {
+  color: white;
+}
+
+.description {
+  text-align: justify;
+  padding: 5%;
+}
